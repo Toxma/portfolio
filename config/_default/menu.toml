@@ -8,17 +8,28 @@
 #newtab = true
 
 [[social]]
+identifier = "linkedin"
+name = "Linkedin"
+url = "https://www.linkedin.com/in/matteozinutti/"
+weight = 1
+
+[social.params]
+icon = "brand-linkedin"
+
+[[social]]
 identifier = "github"
 name = "GitHub"
-url = "https://github.com/CaiJimmy/hugo-theme-stack"
+url = "https://github.com/Toxma"
+weight = 2
 
 [social.params]
 icon = "brand-github"
 
 [[social]]
-identifier = "twitter"
-name = "Twitter"
-url = "https://twitter.com"
+identifier = "gitlab"
+name = "GitLab"
+url = "https://gitlab.com/Toxma"
+weight = 3
 
 [social.params]
-icon = "brand-twitter"
+icon = "brand-gitlab"
