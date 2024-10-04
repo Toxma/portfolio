@@ -5,7 +5,7 @@ date: 2023-11-09T22:56:48Z
 image: cover.png
 slug: vscode-workflow
 hidden: false
-comments: true
+comments: false
 draft: false
 categories:
   - Markdown
@@ -13,16 +13,15 @@ categories:
 
 ## Introduction
 
-> Le markdown est un langage de balisage créé en 2004, il a pour but d'être une syntaxe facile à lire et à écrire. Personnellement je l'utilise pour écrire mes cours, prendre des notes ou bien même pour faire les pages de mon portfolio.
+Le **markdown** est un langage de balisage créé en 2004, il a pour but d'être une syntaxe facile à lire et à écrire. Personnellement je l'utilise pour écrire mes cours, prendre des notes ou bien même pour faire les pages de mon portfolio.
 
 ---
 
 ## Éditeur de texte
 
-> Comme éditeur de texte autant pour de la programmation, que pour de la prise de notes, j'utilise comme éditeur de texte [VSCodium](https://vscodium.com/). C'est une alternative à VSCode de chez Microsoft sauf que tous les trackers sont supprimés et le code source est totalement disponible. Il est même possible de configurer VSCodium pour qu'il accède à la marketplace des extensions de Visual Studio Code. Pour ceci, il suffit d'ajouter ces 4 lignes de code dans le fichier product.json de votre éditeur.
+Comme éditeur de texte autant pour de la programmation, que pour de la prise de notes, j'utilise [VSCodium](https://vscodium.com/). C'est une alternative à VSCode de **Microsoft** sauf que tous les trackers sont supprimés et le code source est disponible. Il est même possible de configurer VSCodium pour qu'il accède à la marketplace des extensions de Visual Studio Code. Pour ceci, il suffit d'ajouter les 4 lignes ci-dessous dans le fichier `/usr/share/codium/resources/app/product.json`.
 
 ```json
-
     "extensionsGallery": {
     "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
     "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
@@ -32,7 +31,7 @@ categories:
 
 ### Mes extensions
 
-> Pour ce qui est des extensions j'en utilise 3 qui me permettent de gagner du temps, d'avoir un fichier markdown très lisible et organisé.
+Pour ce qui est des extensions j'en utilise 3 qui me permettent de gagner du temps, d'avoir un fichier markdown très lisible et organisé.
 
 #### Markdown All In One
 
@@ -54,7 +53,7 @@ categories:
 
 ### Fichier de configuration
 
-> Afin de configurer des actions et des paramètres dans son workflow, il est possible d'ajouter un fichier dans son dossier de travail (.vscode/settings.json). Ici, ce code en json me permet de formater mon fichier avec l'extensions markdown all in one à chaque fois que je sauvegarde. De nombreux autres paramètres sont disponibles, tout dépend du besoin de chacun.
+Afin de configurer des actions et des paramètres dans son workflow, il est possible d'ajouter un fichier `.vscode/settings.json` dans votre workdir. Ici, ce code en json me permet de formater mon fichier avec l'extensions markdown all in one à chaque fois que je sauvegarde. De nombreux autres paramètres sont disponibles, tout dépend du besoin de chacun.
 
 ```json
 {
