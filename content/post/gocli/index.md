@@ -6,7 +6,7 @@ image: cover.png
 slug: go-cli
 hidden: false
 comments: false
-draft: true
+draft: false
 categories:
   - Golang
 ---
@@ -33,7 +33,7 @@ Après avoir comparé les 3 solutions d'authentification, j'ai remarqué qu'Auth
 
 ### Framework Golang
 
-Pour le framework Go, j'ai vu qu'il existait 2 framework qui font l'unanimité dans ce domaine : [**Cobra** 🐍](https://github.com/spf13/cobra) et [**Kong** 🦍](https://github.com/alecthomas/kong).
+Pour le framework Go, j'ai vu qu'il existait 2 frameworks qui font l'unanimité dans ce domaine : [**Cobra** 🐍](https://github.com/spf13/cobra) et [**Kong** 🦍](https://github.com/alecthomas/kong).
 
 En suivant des tutoriels sur YouTube qui utilisait le framework **Cobra**, la simplicité d'utilisation m'a permis de rapidement mettre en place un POC de ma CLI avec une gestion des flags très intuitive et une documentation automatisée. J'ai donc continué sur ce framework. Il y a énormément de projet qui utilise Cobra comme on peut le voir dans cette [liste](https://github.com/spf13/cobra/blob/main/site/content/projects_using_cobra.md).
 
@@ -92,7 +92,7 @@ Pour le déploiement du projet, celui-ci se résume à un simple fichier `docker
 ```yaml
 services:
   pocketbase:
-    image: registry.gitlab.com/toxma/go-cli/pocketbase:v1.0
+    build: .
     container_name: pocketbase
     ports:
       - 8090:8080
@@ -101,6 +101,10 @@ services:
 ```
 
 La **CLI** fonctionne quant à elle via un binaire récupérable depuis les **releases** GitLab ou bien en compilant le code directement en local.
+
+## Démonstration
+
+![Démonstration de l'utilisation de la CLI](demo.gif)
 
 ## Conclusion
 
