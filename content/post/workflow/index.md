@@ -63,3 +63,9 @@ Afin de configurer des actions et des paramètres dans son workflow, il est poss
   "editor.formatOnSave": true
 }
 ```
+
+## Conclusion
+
+Tout ce workflow est donc très utile dans ma rédaction au quotidien, par exemple pour régider cette article ainsi que tout le reste de mon site ! Et me permet donc d'avoir des notes très lisible dans n'importe quel environnement.
+
+Le markdown est également le format utilisé dans la documentation de projet (github, gitlab), mais aussi souvent dans les wikis (bookstack, mkdocs).

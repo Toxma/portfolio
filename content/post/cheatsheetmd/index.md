@@ -8,8 +8,8 @@ hidden: false
 comments: false
 draft: false
 categories:
-    - Markdown
-    - Cheatsheet
+  - Markdown
+  - Cheatsheet
 ---
 
 ## Header
@@ -43,14 +43,14 @@ categories:
     1. Item 1
     1. Item 1.1
     2. Item 2
-    3. Item 3 
+    3. Item 3
 
 ## Unordered list
 
-   - Item 1
-     - Item 1.1
-   - Item 2
-   - Item 3 
+    - Item 1
+      - Item 1.1
+    - Item 2
+    - Item 3
 
 ## Inline Code
 
@@ -59,7 +59,7 @@ categories:
 ## Code Block
 
     ```<language>
-    
+
     ```
 
 ## Horizontal Rule
@@ -82,7 +82,6 @@ categories:
     | Paragraph |        Text |
 
 ## Footnote
-
 
     Here's a sentence with a footnote. [^1]
 
