@@ -6,7 +6,7 @@ image: cover.png
 slug: wiki
 hidden: false
 comments: false
-draft: true
+draft: false
 categories:
   - Wiki
 ---
