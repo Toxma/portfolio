@@ -1,6 +1,6 @@
 ---
-title: "ZWiki"
-description: Création d'un wiki personnel afin d'y mettre tout type d'information.
+title: "Création d'un wiki personnel"
+description: MkDocs & Material
 date: 2024-10-06T22:56:48Z
 image: cover.png
 slug: wiki
@@ -13,11 +13,11 @@ categories:
 
 ## Introduction
 
-Avec le nombre d'informations qui arrivent vers moi chaque jour dans de nombreux domaines, des centaines de pages de notes manuscrites éparpillées un peu partout et jamais réutilisées, et toujours le souci de régler un problème pour la 20e fois sans se souvenir de la solution comme les 19 fois précédentes. 😆
+Avec le nombre d'informations qui arrivent vers moi chaque jour dans de nombreux domaines, des pages de notes manuscrites éparpillées un peu partout et jamais réutilisées, et toujours le souci de régler un problème pour la énième fois sans se souvenir de la solution comme les toutes les fois précédentes. 😆
 
 Il me manquait donc un outil pour me servir de **second cerveau** 🧠 afin d'avoir toutes ces pages de notes ou ces erreurs déjà résolues **rassemblées** au même endroit.
 
-L'expression du **besoin** était donc présente, avec des conditions obligatoires qui se sont dessinées au fil des différents tests :
+L'expression du **besoin** était de ce fait présente, avec des conditions obligatoires qui se sont dessinées au fil des différents tests :
 
 - Rapidité d'accessibilité
 - Rédaction des pages en Markdown
@@ -35,13 +35,13 @@ de cet outil.
 
 La première version de mon **wiki** utilisait cet outil. J'ai utilisé un **Dockerfile** afin de pouvoir conteneuriser l'outil et de pouvoir l'utiliser en local sans besoin d'installer le paquet python **mkdocs**.
 
-Seul bémol de cet outil est qu'il pique un peu les yeux. C'est ceci qui m'a motivé à trouver un thème !
+Seul bémol de cet outil est que l'interface utilisateur pique un peu les yeux. C'est ceci qui m'a motivé à trouver un thème !
 
 ### Material
 
 Material est un framework qui s'utilise par-dessus **MkDocs** et va ainsi permettre de générer un site statique personnalisable via une multitude d'options, mais également la possibilité d'ajouter des plugins.
 
-Ceci va permettre d'avoir un rendu très propre tout en minimisant la partie configuration, car bon nombre de fonctionnalités qui sont déjà intégrées dans le framework et une simple ligne dans le fichier de configuration permet de les ajouter.
+Ceci va permettre d'avoir un rendu très propre tout en minimisant la partie configuration, car bon nombre de fonctionnalités sont déjà intégrées dans le framework et une simple ligne dans le fichier de configuration permet de les ajouter.
 
 ![Exemple MkDocs avec Material](mkdocs_example.png)
 
@@ -132,15 +132,35 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 ```
 
-Dans mon cas, j'ai ajouté différentes features permettant par exemple de copier les blocs de code, d'avoir des onglets par nom de sections ou bien le choix entre light & dark mode. J'ai également ajouté le plugin `search` afin d'avoir une barre de recherche dans mon wiki.
+Dans mon cas, j'ai ajouté différentes features permettant par exemple de copier les blocs de code, d'avoir des onglets par nom de sections ou bien le choix entre light & dark mode. J'ai ajouté le plugin `search` afin d'avoir une barre de recherche dans mon wiki.
 
-J'ai également ajouté des extensions pythons permettant de mettre des emojis, des schémas mermaid ou bien d'ajouter des classes HTML/CSS à mes blocs de markdown.
+J'ai ajouté des extensions pythons permettant de mettre des émojis, des schémas mermaid ou bien d'ajouter des classes HTML/CSS à mes blocs de markdown.
+
+## Ajout de contenu
+
+Pour ce qui va être du contenu, il se situera sous le répertoire `docs/`, chaque dossier représentera une section et chaque fichier représentera une page.
+
+Il est possible de créer une architecture très modulable en ayant N section avec N sous-section et N fichier par sous-section. Ou bien créer uniquement des fichiers. Le fonctionnement laisse un libre recours à l'imagination.
+
+Le nom de dossier représentera le nom de la section / sous-section et pour les pages, le titre sera le nom du fichier ou le header (# Titre1) en markdown s'il y en a 1.
+
+```bash
+docs/
+├── assets
+│   └── logo.png
+├── Plantes
+│   ├── ficus.jpg
+│   └── Ficus.md
+└── Tech
+    ├── Git
+    │   └── config.md
+    └── Golang
+        └── issues.md
+```
 
 ## Déploiement
 
-Pour la partie déploiement, je lance ce projet uniquement en local via un conteneur docker, car je n'ai pas l'intérêt de l'héberger sur le web actuellement.
-
-Je passe par un fichier `docker-compose.yml` dans lequel je peux lancer tous mes outils en local dont celui-ci.
+Pour la partie déploiement, je lance ce projet en local dans un conteneur docker via le fichier `docker-compose.yml`, car je n'ai pas l'intérêt de l'héberger sur le web actuellement.
 
 ```bash
 services:
