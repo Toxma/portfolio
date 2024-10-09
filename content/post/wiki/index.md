@@ -33,13 +33,43 @@ de cet outil.
 
 ![Site MkDocs](mkdocs.png)
 
-La première version de mon **wiki** utilisait donc cette outil. J'ai utilisé un **Dockerfile** afin de pouvoir conteneuriser l'outil et de pouvoir l'utiliser en local sans besoin d'installer le paquet python **mkdocs**.
+La première version de mon **wiki** utilisait cet outil. J'ai utilisé un **Dockerfile** afin de pouvoir conteneuriser l'outil et de pouvoir l'utiliser en local sans besoin d'installer le paquet python **mkdocs**.
 
-Seul bémol de cet outil c'est qu'il pique un peu les yeux
+Seul bémol de cet outil est qu'il pique un peu les yeux. C'est ceci qui m'a motivé à trouver un thème !
 
 ### Material
 
+Material est un framework qui s'utilise par-dessus **MkDocs** et va ainsi permettre de générer un site statique personnalisable via une multitude d'options, mais également la possibilité d'ajouté des plugins.
+
+Ceci va permettre d'avoir un rendu très propre tout en minimisant la partie configuration, car bon nombre de fonctionnalités qui sont déjà intégrées dans le framework et une simple ligne dans le fichier de configuration permet de les ajouter.
+
+![Exemple MkDocs avec Material](mkdocs_example.png)
+
 ## Mise en place du wiki
+
+Pour mettre en place cet outil, je me suis basé sur la [documentation](https://squidfunk.github.io/mkdocs-material/creating-your-site/) de **Material** en suivant la mise en place via **docker**.
+
+Une fois le projet initialisé, on se retrouve avec l'arborescence suivante :
+
+```bash
+.
+├── Dockerfile
+├── docs
+│   ├── assets
+│   ├── Finances
+│   ├── index.md
+│   ├── Livres
+│   └── Tech
+├── mkdocs.yaml
+└── README.md
+```
+
+- **Dockerfile** : Permet la construction de l'image donc avec les paquets python nécessaires
+- **docs** : Représente l'arborescence de notre wiki
+- **mkdocs.yaml** : Fichier de configuration du wiki
+
+### Configuration
+
 
 ## Déploiement
 
